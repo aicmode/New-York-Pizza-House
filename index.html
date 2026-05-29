@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New York Pizza House</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Oswald:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="#hero" class="logo">
+        <span class="logo-icon">🍕</span>
+        <span class="logo-text">NEW YORK<br><em>PIZZA HOUSE</em></span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#hero" class="nav-link">ホーム</a>
+        <a href="#menu" class="nav-link">メニュー</a>
+        <a href="#why" class="nav-link">特徴</a>
+        <a href="#reviews" class="nav-link">レビュー</a>
+        <a href="#gallery" class="nav-link">ギャラリー</a>
+        <a href="#footer" class="nav-link">お問い合わせ</a>
+      </nav>
+      <div class="header-actions">
+        <button class="cart-btn" id="cartBtn" aria-label="カートを開く">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1920&q=85&auto=format&fit=crop" alt="Pizza background" class="hero-img" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span>🗽 NEW YORK STYLE</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="hero-title-line1">NEW YORK</span>
+        <span class="hero-title-line2">PIZZA HOUSE</span>
+      </h1>
+      <p class="hero-desc">
+        ニューヨークの街角で味わうような、<br>本格ピザを自宅までお届けします。
+      </p>
+      <div class="hero-btns">
+        <a href="#menu" class="btn btn-primary">注文する</a>
+        <a href="#menu" class="btn btn-outline">メニューを見る</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>1,200+</strong><span>満足いただいたお客様</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>4.9★</strong><span>平均評価</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>30分</strong><span>最速お届け</span></div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>スクロール</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== POPULAR PIZZAS ===== -->
+  <section class="section pizzas-section" id="menu">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">ORDER NOW</p>
+        <h2 class="section-title">POPULAR PIZZAS</h2>
+        <p class="section-sub">厳選素材で仕上げた、人気メニューをご紹介します。</p>
+      </div>
+      <div class="pizzas-grid">
+
+        <div class="pizza-card" data-id="1" data-name="Margherita" data-price="1480">
+          <div class="pizza-img-wrap">
+            <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&q=80&auto=format&fit=crop" alt="Margherita" class="pizza-img" loading="lazy" />
+            <div class="pizza-badge">人気</div>
+          </div>
+          <div class="pizza-info">
+            <div class="pizza-top">
+              <h3 class="pizza-name">Margherita</h3>
+              <p class="pizza-desc">トマトソース、モッツァレラ、バジルを合わせた定番の一枚。</p>
+            </div>
+            <div class="pizza-bottom">
+              <span class="pizza-price">¥1,480</span>
+              <button class="btn-add" onclick="addToCart(1,'Margherita',1480)">カートに追加</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pizza-card" data-id="2" data-name="Pepperoni" data-price="1680">
+          <div class="pizza-img-wrap">
+            <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=600&q=80&auto=format&fit=crop" alt="Pepperoni" class="pizza-img" loading="lazy" />
+            <div class="pizza-badge popular">No.1</div>
+          </div>
+          <div class="pizza-info">
+            <div class="pizza-top">
+              <h3 class="pizza-name">Pepperoni</h3>
+              <p class="pizza-desc">香ばしいペパロニを贅沢にのせた人気No.1ピザ。</p>
+            </div>
+            <div class="pizza-bottom">
+              <span class="pizza-price">¥1,680</span>
+              <button class="btn-add" onclick="addToCart(2,'Pepperoni',1680)">カートに追加</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pizza-card" data-id="3" data-name="BBQ Chicken" data-price="1780">
+          <div class="pizza-img-wrap">
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80&auto=format&fit=crop" alt="BBQ Chicken" class="pizza-img" loading="lazy" />
+          </div>
+          <div class="pizza-info">
+            <div class="pizza-top">
+              <h3 class="pizza-name">BBQ Chicken</h3>
+              <p class="pizza-desc">甘辛いBBQソースとジューシーなチキンが相性抜群。</p>
+            </div>
+            <div class="pizza-bottom">
+              <span class="pizza-price">¥1,780</span>
+              <button class="btn-add" onclick="addToCart(3,'BBQ Chicken',1780)">カートに追加</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pizza-card" data-id="4" data-name="Four Cheese" data-price="1880">
+          <div class="pizza-img-wrap">
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80&auto=format&fit=crop" alt="Four Cheese" class="pizza-img" loading="lazy" />
+            <div class="pizza-badge cheese">チーズ好き</div>
+          </div>
+          <div class="pizza-info">
+            <div class="pizza-top">
+              <h3 class="pizza-name">Four Cheese</h3>
+              <p class="pizza-desc">4種のチーズを濃厚に楽しめるチーズ好きのための一枚。</p>
+            </div>
+            <div class="pizza-bottom">
+              <span class="pizza-price">¥1,880</span>
+              <button class="btn-add" onclick="addToCart(4,'Four Cheese',1880)">カートに追加</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pizza-card" data-id="5" data-name="Meat Lovers" data-price="1980">
+          <div class="pizza-img-wrap">
+            <img src="https://images.unsplash.com/photo-1548369937-47519962c11a?w=600&q=80&auto=format&fit=crop" alt="Meat Lovers" class="pizza-img" loading="lazy" />
+          </div>
+          <div class="pizza-info">
+            <div class="pizza-top">
+              <h3 class="pizza-name">Meat Lovers</h3>
+              <p class="pizza-desc">肉の旨みをたっぷり詰め込んだボリューム満点ピザ。</p>
+            </div>
+            <div class="pizza-bottom">
+              <span class="pizza-price">¥1,980</span>
+              <button class="btn-add" onclick="addToCart(5,'Meat Lovers',1980)">カートに追加</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pizza-card" data-id="6" data-name="Hawaiian" data-price="1780">
+          <div class="pizza-img-wrap">
+            <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80&auto=format&fit=crop" alt="Hawaiian" class="pizza-img" loading="lazy" />
+          </div>
+          <div class="pizza-info">
+            <div class="pizza-top">
+              <h3 class="pizza-name">Hawaiian</h3>
+              <p class="pizza-desc">パイナップルの甘みとハムの塩気がクセになる一枚。</p>
+            </div>
+            <div class="pizza-bottom">
+              <span class="pizza-price">¥1,780</span>
+              <button class="btn-add" onclick="addToCart(6,'Hawaiian',1780)">カートに追加</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SPECIAL OFFER ===== -->
+  <section class="offer-section" id="offer">
+    <div class="offer-bg">
+      <img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=1920&q=80&auto=format&fit=crop" alt="Special offer background" />
+      <div class="offer-overlay"></div>
+    </div>
+    <div class="container offer-content">
+      <div class="offer-label">LIMITED OFFER</div>
+      <h2 class="offer-title">SPECIAL OFFER</h2>
+      <p class="offer-text">
+        Lサイズを2枚ご注文で、対象ピザを<strong>1枚無料プレゼント。</strong>
+      </p>
+      <p class="offer-sub">期間限定・数量限定のスペシャルキャンペーンです。</p>
+      <a href="#menu" class="btn btn-fire">キャンペーンを見る</a>
+    </div>
+  </section>
+
+  <!-- ===== WHY CHOOSE US ===== -->
+  <section class="section why-section" id="why">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">OUR PROMISE</p>
+        <h2 class="section-title">WHY CHOOSE US</h2>
+        <p class="section-sub">ニューヨークピザハウスが選ばれる4つの理由。</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="32" cy="32" r="28" stroke="currentColor" stroke-width="3"/>
+              <path d="M32 16v16l8 8" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              <path d="M20 48l-6 6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              <path d="M44 48l6 6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="why-title">Fast Delivery</h3>
+          <p class="why-desc">焼きたてのおいしさをできるだけ早くお届けします。</p>
+          <div class="why-num">01</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 56 L8 28 Q8 8 32 8 Q56 8 56 28 L56 56" stroke="currentColor" stroke-width="3"/>
+              <path d="M4 56h56" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="32" cy="30" r="8" stroke="currentColor" stroke-width="3"/>
+              <path d="M16 56V42" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              <path d="M48 56V42" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="why-title">Stone Oven Baked</h3>
+          <p class="why-desc">高温の石窯で焼き上げ、外は香ばしく中はもちっと仕上げます。</p>
+          <div class="why-num">02</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M32 8 C20 8 10 18 10 30 C10 46 20 52 32 56 C44 52 54 46 54 30 C54 18 44 8 32 8Z" stroke="currentColor" stroke-width="3"/>
+              <path d="M24 30 l6 6 l12-12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="why-title">Fresh Ingredients</h3>
+          <p class="why-desc">厳選した野菜、チーズ、ソースを使用しています。</p>
+          <div class="why-num">03</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M32 6 l6.18 12.54 13.82 2.01-10 9.74 2.36 13.75L32 38l-12.36 6.04 2.36-13.75-10-9.74 13.82-2.01Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="why-title">4.9 Star Rating</h3>
+          <p class="why-desc">多くのお客様から高評価をいただいています。</p>
+          <div class="why-num">04</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CUSTOMER REVIEWS ===== -->
+  <section class="section reviews-section" id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">TESTIMONIALS</p>
+        <h2 class="section-title">CUSTOMER REVIEWS</h2>
+        <p class="section-sub">実際にご利用いただいたお客様の声です。</p>
+      </div>
+      <div class="reviews-grid">
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">「生地が香ばしくて、チーズも濃厚。デリバリーとは思えないクオリティでした。」</p>
+          <div class="review-author">
+            <div class="review-avatar" style="background:#c0392b">T</div>
+            <div>
+              <strong>田中 美咲</strong>
+              <span>鹿児島市在住</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card featured">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">「注文から到着までスムーズで、家族みんなで楽しめました。」</p>
+          <div class="review-author">
+            <div class="review-avatar" style="background:#e67e22">S</div>
+            <div>
+              <strong>佐藤 健太</strong>
+              <span>宮崎市在住</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">「ペパロニが最高。週末の定番にしたいピザです。」</p>
+          <div class="review-author">
+            <div class="review-avatar" style="background:#c0392b">Y</div>
+            <div>
+              <strong>山本 由香</strong>
+              <span>霧島市在住</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="reviews-rating-bar">
+        <div class="rating-overall">
+          <div class="rating-num">4.9</div>
+          <div class="rating-stars">★★★★★</div>
+          <div class="rating-label">総合評価</div>
+        </div>
+        <div class="rating-bars">
+          <div class="rbar"><span>5★</span><div class="rbar-track"><div class="rbar-fill" style="width:92%"></div></div><span>92%</span></div>
+          <div class="rbar"><span>4★</span><div class="rbar-track"><div class="rbar-fill" style="width:6%"></div></div><span>6%</span></div>
+          <div class="rbar"><span>3★</span><div class="rbar-track"><div class="rbar-fill" style="width:2%"></div></div><span>2%</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY ===== -->
+  <section class="section gallery-section" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">PHOTOS</p>
+        <h2 class="section-title">GALLERY</h2>
+        <p class="section-sub">焼きたての香ばしさや、とろけるチーズの質感をご覧ください。</p>
+      </div>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item large cola-item">
+        <img src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=800&q=80&auto=format&fit=crop" alt="Pizza gallery 1" loading="lazy" />
+        <div class="gallery-overlay"><span>石窯ピザ</span></div>
+        <div class="house-cola-overlay" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 74 210">
+            <defs>
+              <linearGradient id="hcg" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%"   stop-color="#0a160a" stop-opacity="0.96"/>
+                <stop offset="30%"  stop-color="#152415" stop-opacity="0.89"/>
+                <stop offset="50%"  stop-color="#1d341d" stop-opacity="0.83"/>
+                <stop offset="70%"  stop-color="#152415" stop-opacity="0.89"/>
+                <stop offset="100%" stop-color="#0a160a" stop-opacity="0.96"/>
+              </linearGradient>
+              <linearGradient id="hcl" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%"   stop-color="#7a1810"/>
+                <stop offset="50%"  stop-color="#c0392b"/>
+                <stop offset="100%" stop-color="#7a1810"/>
+              </linearGradient>
+              <linearGradient id="hcc" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%"   stop-color="#d44233"/>
+                <stop offset="100%" stop-color="#8b2016"/>
+              </linearGradient>
+              <filter id="hcsh" x="-40%" y="-5%" width="200%" height="115%">
+                <feDropShadow dx="5" dy="5" stdDeviation="7" flood-color="#000" flood-opacity="0.65"/>
+              </filter>
+              <clipPath id="hcbody">
+                <path d="M30,28 C28,30 23,38 20,52 L16,68 L16,192 Q16,206 37,206 Q58,206 58,192 L58,68 L54,52 C51,38 46,30 44,28 Z"/>
+              </clipPath>
+            </defs>
+            <path d="M30,28 C28,30 23,38 20,52 L16,68 L16,192 Q16,206 37,206 Q58,206 58,192 L58,68 L54,52 C51,38 46,30 44,28 L44,18 L30,18 Z" fill="#000" opacity="0.45" transform="translate(4,5)" filter="url(#hcsh)"/>
+            <rect x="29" y="16" width="16" height="14" rx="2" fill="url(#hcg)"/>
+            <path d="M30,28 C28,30 23,38 20,52 L16,68 L16,192 Q16,206 37,206 Q58,206 58,192 L58,68 L54,52 C51,38 46,30 44,28 Z" fill="url(#hcg)"/>
+            <path d="M19,68 L17,72 L17,190 Q17.5,202 21.5,204 L19.5,204 Q15.5,200 15.5,190 L15.5,70 Z" fill="rgba(255,255,255,0.09)"/>
+            <rect x="52" y="72" width="2.5" height="105" rx="1.25" fill="rgba(255,255,255,0.05)"/>
+            <path d="M20,52 L18,64 C24,56 30,53 37,52 C44,53 50,56 56,64 L54,52 C51,38 46,30 44,28 L37,27 L30,28 C28,30 23,38 20,52 Z" fill="rgba(255,255,255,0.07)"/>
+            <rect x="16" y="74" width="42" height="110" fill="url(#hcl)" clip-path="url(#hcbody)"/>
+            <rect x="16" y="74" width="42" height="15" fill="#111111" clip-path="url(#hcbody)"/>
+            <rect x="16" y="169" width="42" height="15" fill="#111111" clip-path="url(#hcbody)"/>
+            <line x1="16" y1="90" x2="58" y2="90" stroke="#c89010" stroke-width="1"/>
+            <line x1="16" y1="92" x2="58" y2="92" stroke="rgba(200,144,16,0.35)" stroke-width="0.5"/>
+            <line x1="16" y1="167" x2="58" y2="167" stroke="rgba(200,144,16,0.35)" stroke-width="0.5"/>
+            <line x1="16" y1="169" x2="58" y2="169" stroke="#c89010" stroke-width="1"/>
+            <text x="37" y="84" text-anchor="middle" fill="#c89010" font-family="Georgia,'Times New Roman',serif" font-size="5.5" font-style="italic" letter-spacing="0.8">EST. 2025</text>
+            <line x1="21" y1="96" x2="53" y2="96" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
+            <text x="37" y="113" text-anchor="middle" fill="#ffffff" font-family="Oswald,'Arial Narrow',Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="2.5">HOUSE</text>
+            <text x="37" y="123" text-anchor="middle" fill="#c89010" font-size="8">✦</text>
+            <text x="37" y="148" text-anchor="middle" fill="#e8a900" font-family="Oswald,'Arial Narrow',Arial,sans-serif" font-size="19" font-weight="700" letter-spacing="3.5">COLA</text>
+            <line x1="21" y1="153" x2="53" y2="153" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
+            <text x="37" y="160" text-anchor="middle" fill="rgba(255,255,255,0.52)" font-family="Arial,sans-serif" font-size="3.8" letter-spacing="0.4">PREMIUM CRAFT COLA</text>
+            <text x="37" y="175" text-anchor="middle" fill="#c89010" font-family="Arial,sans-serif" font-size="3.5" letter-spacing="0.3">NEW YORK PIZZA HOUSE</text>
+            <rect x="28" y="5" width="18" height="12" rx="2.5" fill="url(#hcc)"/>
+            <path d="M27.5,13.5 L46.5,13.5" stroke="#1a1a1a" stroke-width="2.5"/>
+            <ellipse cx="37" cy="7" rx="7" ry="2.5" fill="rgba(230,80,60,0.22)"/>
+          </svg>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80&auto=format&fit=crop" alt="Pizza gallery 2" loading="lazy" />
+        <div class="gallery-overlay"><span>店内の雰囲気</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?w=600&q=80&auto=format&fit=crop" alt="Pizza gallery 3" loading="lazy" />
+        <div class="gallery-overlay"><span>マルゲリータ</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&q=80&auto=format&fit=crop" alt="Pizza gallery 4" loading="lazy" />
+        <div class="gallery-overlay"><span>こだわりの生地</span></div>
+      </div>
+      <div class="gallery-item large">
+        <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=800&q=80&auto=format&fit=crop" alt="Pizza gallery 5" loading="lazy" />
+        <div class="gallery-overlay"><span>ペパロニ</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80&auto=format&fit=crop" alt="Pizza gallery 6" loading="lazy" />
+        <div class="gallery-overlay"><span>ハワイアン</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="footer">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-col brand-col">
+          <div class="footer-logo">
+            <span class="logo-icon">🍕</span>
+            <span>NEW YORK<br><em>PIZZA HOUSE</em></span>
+          </div>
+          <p class="footer-tagline">ニューヨークスタイルの本格ピザをあなたの食卓へ。</p>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter/X">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">店舗情報</h4>
+          <ul class="footer-list">
+            <li>
+              <svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              〒892-0000 鹿児島県鹿児島市中央町1-1
+            </li>
+            <li>
+              <svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              099-000-0000
+            </li>
+            <li>
+              <svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              info@newyorkpizzahouse.jp
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">営業時間</h4>
+          <ul class="footer-list hours">
+            <li><span>月〜金</span><span>11:00 – 22:00</span></li>
+            <li><span>土・日</span><span>10:00 – 23:00</span></li>
+            <li><span>祝日</span><span>10:00 – 22:00</span></li>
+            <li class="closed"><span>定休日</span><span>年中無休</span></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">オンライン注文</h4>
+          <ul class="footer-list">
+            <li><a href="#menu">メニュー一覧</a></li>
+            <li><a href="#offer">キャンペーン</a></li>
+            <li><a href="#why">こだわり</a></li>
+            <li><a href="#reviews">お客様の声</a></li>
+            <li><a href="#gallery">ギャラリー</a></li>
+          </ul>
+          <button class="btn btn-primary footer-order-btn" onclick="document.getElementById('cartBtn').click()">
+            今すぐ注文する
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2025 New York Pizza House. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">プライバシーポリシー</a>
+          <a href="#">特定商取引法</a>
+          <a href="#">利用規約</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== CART PANEL ===== -->
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <h2 class="cart-title">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        カート
+      </h2>
+      <button class="cart-close" id="cartClose" aria-label="カートを閉じる">✕</button>
+    </div>
+    <div class="cart-body" id="cartBody">
+      <div class="cart-empty" id="cartEmpty">
+        <div class="cart-empty-icon">🍕</div>
+        <p>カートに商品がありません</p>
+        <p class="cart-empty-sub">メニューからピザを選んでください。</p>
+      </div>
+      <ul class="cart-items" id="cartItems"></ul>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-subtotal">
+        <span>小計</span><span id="cartSubtotal">¥0</span>
+      </div>
+      <div class="cart-shipping">
+        <span>配送料</span><span>¥300</span>
+      </div>
+      <div class="cart-total">
+        <span>合計</span><span id="cartTotal">¥0</span>
+      </div>
+      <button class="btn btn-primary checkout-btn" id="checkoutBtn">購入手続きへ</button>
+      <button class="btn btn-ghost" id="continueShopping">買い物を続ける</button>
+    </div>
+  </aside>
+
+  <!-- ===== CHECKOUT MODAL ===== -->
+  <div class="modal-backdrop" id="modalBackdrop"></div>
+  <div class="checkout-modal" id="checkoutModal">
+    <button class="modal-close" id="modalClose" aria-label="閉じる">✕</button>
+    <div class="modal-inner" id="modalInner">
+      <div class="modal-header">
+        <h2>購入手続き</h2>
+        <p>配送先情報をご入力ください。</p>
+      </div>
+      <form class="checkout-form" id="checkoutForm" novalidate>
+        <div class="form-group">
+          <label for="fname">お名前 <span class="required">*</span></label>
+          <input type="text" id="fname" name="fname" placeholder="山田 太郎" required />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">電話番号 <span class="required">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="090-0000-0000" required />
+          </div>
+          <div class="form-group">
+            <label for="email">メールアドレス <span class="required">*</span></label>
+            <input type="email" id="email" name="email" placeholder="example@email.com" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="address">配送先住所 <span class="required">*</span></label>
+          <input type="text" id="address" name="address" placeholder="〒000-0000 都道府県・市区町村・番地" required />
+        </div>
+        <div class="form-group">
+          <label for="delivtime">お届け希望時間</label>
+          <select id="delivtime" name="delivtime">
+            <option value="">指定なし（最短でお届け）</option>
+            <option value="12-14">12:00 〜 14:00</option>
+            <option value="14-16">14:00 〜 16:00</option>
+            <option value="16-18">16:00 〜 18:00</option>
+            <option value="18-20">18:00 〜 20:00</option>
+            <option value="20-22">20:00 〜 22:00</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>お支払い方法 <span class="required">*</span></label>
+          <div class="payment-options">
+            <label class="pay-opt">
+              <input type="radio" name="payment" value="credit" checked />
+              <span class="pay-opt-inner">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                クレジットカード
+              </span>
+            </label>
+            <label class="pay-opt">
+              <input type="radio" name="payment" value="cod" />
+              <span class="pay-opt-inner">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="1"/><path d="M2 10h20"/><path d="M6 14h2"/><path d="M10 14h6"/></svg>
+                代金引換
+              </span>
+            </label>
+            <label class="pay-opt">
+              <input type="radio" name="payment" value="pickup" />
+              <span class="pay-opt-inner">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                店頭受け取り
+              </span>
+            </label>
+          </div>
+        </div>
+        <div class="form-order-summary">
+          <div class="fos-label">ご注文内容</div>
+          <div id="formOrderItems"></div>
+          <div class="fos-total">
+            <span>合計金額</span>
+            <strong id="formOrderTotal">¥0</strong>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full submit-order-btn">注文を確定する</button>
+        <p class="demo-note">※ これはデモ注文です。実際の決済は行われません。</p>
+      </form>
+    </div>
+
+    <!-- Order Confirmation -->
+    <div class="order-confirm" id="orderConfirm" style="display:none">
+      <div class="confirm-icon">✓</div>
+      <h2>ご注文ありがとうございます</h2>
+      <p class="confirm-msg">デモ注文が完了しました。</p>
+      <p class="confirm-sub">実際のサービスでは、確認メールをお送りします。<br>熱々のピザをお楽しみに！</p>
+      <div class="confirm-order-id">注文番号: <strong id="confirmOrderId"></strong></div>
+      <button class="btn btn-primary" id="confirmClose">ホームに戻る</button>
+    </div>
+  </div>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
