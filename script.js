@@ -100,6 +100,8 @@ function renderCart() {
     cartEmpty.style.display = 'block';
     cartItemsList.style.display = 'none';
     cartFooter.style.display = 'none';
+    cartSubtotal.textContent = '¥0';
+    cartTotal.textContent = '¥0';
     return;
   }
 
